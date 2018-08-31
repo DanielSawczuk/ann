@@ -38,3 +38,4 @@ network.train(training_data=(x_tr, y_tr),
                regularization_rate=5,
                callback=callback)
 ```     
+Repository contains the [MNIST set](http://yann.lecun.com/exdb/mnist/)
