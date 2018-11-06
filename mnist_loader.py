@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def load_helper(images_path, labels_path):
+def loader_helper(images_path, labels_path):
     with open(images_path, "rb") as f:
         f.read(4)  # magic number
         num_of_images = int.from_bytes(f.read(4), byteorder="big")
@@ -42,8 +42,8 @@ def load_mnist():
     test_data_images_path = "./t10k-images.idx3-ubyte"
     test_data_labels_path = "./t10k-labels.idx1-ubyte"
 
-    training_images, training_labels = load_helper(training_data_images_path, training_data_labels_path)
-    test_images, test_labels = load_helper(test_data_images_path, test_data_labels_path)
+    training_images, training_labels = loader_helper(training_data_images_path, training_data_labels_path)
+    test_images, test_labels = loader_helper(test_data_images_path, test_data_labels_path)
 
     training_data = (training_images, training_labels)
     test_data = (test_images, test_labels)
